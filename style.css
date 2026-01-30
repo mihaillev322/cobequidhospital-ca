@@ -1,0 +1,497 @@
+/* ===========================
+   CSS Variables: Cobequid Meridian Palette
+   =========================== */
+:root {
+  --color-primary: #1E4D6B;
+  --color-secondary: #2F7A6D;
+  --color-accent: #C86B2A;
+  --color-bg: #F6F4EF;
+  --color-surface: #FFFFFF;
+  --color-text: #10212B;
+  --color-muted: #4B5D66;
+  --color-border: #D7D2C7;
+  --radius: 2px;
+  --space: 1.5rem;
+  --maxw: 1200px;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --line-height-base: 1.6;
+  --line-height-heading: 1.2;
+}
+
+/* ===========================
+   Reset and Base Styles
+   =========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===========================
+   Typography: Swiss Style
+   =========================== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: var(--line-height-heading);
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-top: 2rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--color-secondary);
+  text-decoration: underline;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius);
+}
+
+strong {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+blockquote {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: var(--color-surface);
+  border-left: 4px solid var(--color-accent);
+  font-style: italic;
+  color: var(--color-text);
+}
+
+blockquote p {
+  margin-bottom: 0;
+}
+
+aside {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+aside h3 {
+  margin-top: 0;
+  font-size: 1.125rem;
+}
+
+aside ul {
+  margin-top: 0.75rem;
+  padding-left: 1.25rem;
+}
+
+aside li {
+  margin-bottom: 0.5rem;
+}
+
+/* ===========================
+   Layout: Container and Grid
+   =========================== */
+.container {
+  max-width: var(--maxw);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space);
+  padding-right: var(--space);
+}
+
+main {
+  min-height: 60vh;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+article {
+  background-color: var(--color-surface);
+  padding: 2rem var(--space);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+section:last-child {
+  margin-bottom: 0;
+}
+
+/* ===========================
+   Header and Navigation
+   =========================== */
+header {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  padding: 1.25rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-surface);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--color-surface);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--color-accent);
+}
+
+nav a:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius);
+}
+
+nav a[aria-current="page"] {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* ===========================
+   Breadcrumbs
+   =========================== */
+.breadcrumbs {
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumbs ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+.breadcrumbs li:not(:last-child)::after {
+  content: "/";
+  margin-left: 0.5rem;
+  color: var(--color-border);
+}
+
+.breadcrumbs a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+  color: var(--color-accent);
+}
+
+.breadcrumbs li[aria-current="page"] {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* ===========================
+   Tables: Semantic and Accessible
+   =========================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+caption {
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-align: left;
+  padding: 1rem;
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+}
+
+thead {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+thead th {
+  padding: 0.875rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid var(--color-secondary);
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--color-border);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--color-bg);
+}
+
+tbody tr:hover {
+  background-color: #EAE8E0;
+}
+
+tbody td {
+  padding: 0.875rem 1rem;
+  vertical-align: top;
+}
+
+@media (min-width: 1024px) {
+  thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+}
+
+/* ===========================
+   Details/Summary Accordion
+   =========================== */
+details {
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-surface);
+  overflow: hidden;
+}
+
+summary {
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  color: var(--color-primary);
+  cursor: pointer;
+  list-style: none;
+  background-color: var(--color-bg);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+summary::before {
+  content: "+";
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+details[open] summary::before {
+  content: "−";
+  color: var(--color-accent);
+}
+
+summary:hover {
+  background-color: #EAE8E0;
+  color: var(--color-secondary);
+}
+
+summary:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: -3px;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-answer {
+  padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+  color: var(--color-text);
+  line-height: var(--line-height-base);
+}
+
+.faq-answer p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===========================
+   Footer
+   =========================== */
+footer {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  padding: 1.5rem 0;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+/* ===========================
+   Responsive Typography
+   =========================== */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1.875rem;
+  }
+  h3 {
+    font-size: 1.375rem;
+  }
+  body {
+    font-size: 1.0625rem;
+  }
+  article {
+    padding: 3rem 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.125rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  body {
+    font-size: 1.125rem;
+  }
+  article {
+    padding: 3.5rem 3rem;
+  }
+}
+
+/* ===========================
+   Utility Classes
+   =========================== */
+.faq-intro,
+.faq-table-section,
+.faq-closing {
+  margin-bottom: 2.5rem;
+}
+
+.faq-list {
+  margin-top: 2rem;
+}
+
+/* ===========================
+   Accessibility: Focus States
+   =========================== */
+*:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+button:focus-visible,
+summary:focus-visible {
+  outline-offset: -3px;
+}
+
+/* ===========================
+   Print Styles
+   =========================== */
+@media print {
+  header,
+  footer,
+  nav {
+    display: none;
+  }
+  body {
+    background-color: white;
+    color: black;
+  }
+  a {
+    text-decoration: underline;
+    color: black;
+  }
+  details {
+    border: none;
+  }
+  summary {
+    font-weight: bold;
+  }
+  .faq-answer {
+    display: block !important;
+  }
+}
